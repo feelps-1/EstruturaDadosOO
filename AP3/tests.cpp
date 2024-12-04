@@ -1,4 +1,4 @@
-#include "classes.cpp"
+#include "article.cpp"
 
 void test_articles(Article a);
 
