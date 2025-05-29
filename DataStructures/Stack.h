@@ -21,6 +21,7 @@ namespace DataStructures {
             };
 
             ListNode<E>* top;
+            int height;
 
         public:
             Stack() { this->top = nullptr};
@@ -33,12 +34,14 @@ namespace DataStructures {
                 node->next = top;
 
                 top = node;
+                height++;
             }
 
             void pop(){
                 ListNode* temp = top;
 
                 top = top->next;
+                height--;
 
                 delete temp;
             }
@@ -50,6 +53,18 @@ namespace DataStructures {
 
                 return INT_MIN;
             }
+
+            int getHeight(){return height;}
+
+            void print() const {
+            ListNode<E>* current = top;
+            std::cout << "Elementos da pilha: ";
+            while (current != nullptr) {
+                std::cout << current->value << " ";
+                current = current->next;
+            }
+            std::cout << "\n";
+        }
             
 
     };
